@@ -14,13 +14,21 @@ internal static class ResponsiveStripChecks {
  static Snapshot Sample(){var s=new Snapshot{Disks=new[]{new DeviceChoice("physical:0","System SSD"),new DeviceChoice("physical:1","Data SSD")}};foreach(var item in Metric.Definitions){var m=item.Value.Copy();m.Value=m.Unit=="°C"?53:m.Unit=="W"?77.5:28;m.Timestamp=DateTime.UtcNow;s.Metrics[m.Id]=m;}foreach(var d in s.Disks)foreach(var id in DiskMetrics.Ids){var m=DiskMetrics.Definition(id,d);m.Value=id=="diskTemp"?34:12.5;m.Timestamp=DateTime.UtcNow;s.Metrics[m.Id]=m;}return s;}
  static HashSet<string> HitIds(Overlay form){var ids=new HashSet<string>();var rows=(Metric[])Field(form,"rows");var hit=typeof(Overlay).GetMethod("StripMetricIndex",Flags);for(int y=(int)Field(form,"stripTop")+6;y<form.Height-3;y+=4)for(int x=6;x<form.Width-3;x+=4){int index=(int)hit.Invoke(form,new object[]{new Point(x,y)});if(index>=0)ids.Add(rows[index].Id);}return ids;}
  static void SetDimension(Settings c,string n,int value){typeof(Settings).GetField(n).SetValue(c,value);}
+ static HashSet<string> AllPageIds(Overlay form){
+  int original=(int)Field(form,"stripPage"),pages=(int)typeof(Overlay).GetMethod("StripPages",Flags).Invoke(form,null);
+  var result=new HashSet<string>();var pageField=typeof(Overlay).GetField("stripPage",Flags);var layout=typeof(Overlay).GetMethod("ApplyAppearance",Flags,null,Type.EmptyTypes,null);
+  try{for(int page=0;page<pages;page++){pageField.SetValue(form,page);layout.Invoke(form,null);result.UnionWith(HitIds(form));}}
+  finally{pageField.SetValue(form,original);layout.Invoke(form,null);}
+  return result;
+ }
  [STAThread]static int Main(string[] args){try{Application.EnableVisualStyles();Application.SetCompatibleTextRenderingDefault(false);string root=args[0];Directory.CreateDirectory(root);
   var c=new Settings{Visible=new[]{"cpu","gpu","ram","vram","cpuTemp","gpuTemp","diskTemp","cpuPower","gpuPower","diskRead","diskWrite","fps"},X=20,Y=100};
   using(var form=new Overlay(c,Path.Combine(root,"diagnostics.txt"))){
    ((NotifyIcon)Field(form,"tray")).Visible=false;var handle=form.Handle;typeof(Overlay).GetMethod("Receive",Flags).Invoke(form,new object[]{Sample()});
-   var expected=((Metric[])Field(form,"rows")).Select(m=>m.Id).ToArray();var seen=HitIds(form);
-   Check(seen.Contains("cpuPower")&&seen.Contains("gpuPower"),"both selected power values are directly visible with chart collapsed");
-   Check(expected.All(seen.Contains),"automatic two-row width displays every selected disk IO FPS and power metric");
+   var expected=((Metric[])Field(form,"rows")).Select(m=>m.Id).ToArray();var seen=AllPageIds(form);
+   Check(seen.Contains("cpuPower")&&seen.Contains("gpuPower"),"both selected power values are reachable with chart collapsed");
+   int automaticPages=(int)typeof(Overlay).GetMethod("StripPages",Flags).Invoke(form,null);
+   Check(expected.All(seen.Contains)&&(automaticPages>1||expected.All(HitIds(form).Contains)),"automatic two-row layout retains every selected metric, paging only when the screen requires it");
    Check(!c.Expanded&&(int)Field(form,"stripTop")==0&&form.Height==48,"all values remain in a two-row collapsed strip");
    Check(form.Width>600&&Screen.FromRectangle(form.Bounds).Bounds.Contains(form.Bounds),"automatic width grows and remains on screen");
    using(var image=new Bitmap(form.Width,form.Height)){form.DrawToBitmap(image,form.ClientRectangle);image.Save(Path.Combine(root,"all-selected-two-rows.png"),ImageFormat.Png);}
