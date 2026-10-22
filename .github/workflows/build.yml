@@ -1,0 +1,33 @@
+name: Windows build
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-2022
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build application from pinned dependencies
+        shell: pwsh
+        run: ./源码/build.ps1 -OutputDirectory ./artifacts/app
+      - name: Run checks without starting hardware sampling
+        shell: pwsh
+        run: ./scripts/Test.ps1
+      - name: Build offline installer
+        shell: pwsh
+        run: ./源码/build-setup.ps1 -AppDirectory ./artifacts/app -OutputDirectory ./artifacts/setup
+      - name: Collect build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: QingMonitor-windows-x64
+          path: |
+            artifacts/app/
+            artifacts/setup/*离线安装包.exe
+            artifacts/checks/results.json
+          if-no-files-found: error

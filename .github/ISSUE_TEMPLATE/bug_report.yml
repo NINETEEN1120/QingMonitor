@@ -1,0 +1,32 @@
+name: 问题反馈
+description: 显示、采样、窗口或设置异常
+title: '[Bug] '
+body:
+  - type: markdown
+    attributes:
+      value: 请描述实际现象。截图与日志请先去掉用户名、个人路径、进程列表等信息。
+  - type: input
+    id: version
+    attributes:
+      label: QingMonitor 版本
+      placeholder: 例如 0.1.11
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 系统与显示环境
+      placeholder: Windows 11 / 150% 缩放 / 双屏 / 普通或管理员运行
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤与实际结果
+      placeholder: 从哪一步开始，预期是什么，实际发生了什么？
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 截图或脱敏后的错误信息（可选）

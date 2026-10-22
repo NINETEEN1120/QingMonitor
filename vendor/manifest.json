@@ -1,0 +1,117 @@
+{
+  "Schema": 1,
+  "ApplicationVersion": "0.1.11",
+  "Description": "Pinned original upstream binaries, licenses and corresponding source archives for offline Windows builds.",
+  "Files": [
+    {
+      "Path": "驱动/说明.txt",
+      "Bytes": 1614,
+      "SHA256": "38FBF776A8E0FBBE074B929B17EAC06DDE5AF08C2EF00D412DEE38439718A2CF"
+    },
+    {
+      "Path": "驱动/PawnIO_setup.exe",
+      "Bytes": 3410960,
+      "SHA256": "1F519A22E47187F70A1379A48CA604981C4FCF694F4E65B734AAA74A9FBA3032"
+    },
+    {
+      "Path": "BlackSharp.Core.dll",
+      "Bytes": 32768,
+      "SHA256": "CAFB93AFCC8D8A367E21F619673D05C06887D8964867FED1371F02DED1CD3E23"
+    },
+    {
+      "Path": "DiskInfoToolkit.dll",
+      "Bytes": 903680,
+      "SHA256": "1ACBF51B3C10C51C986CF43021680D34A2E38D9A5BA652BCFA9A1B5F7FC09800"
+    },
+    {
+      "Path": "HidSharp.dll",
+      "Bytes": 262792,
+      "SHA256": "D86690EFDE30EA9179F669320F39148853793B743A98B531AFEAF30598E22F54"
+    },
+    {
+      "Path": "LibreHardwareMonitorLib.dll",
+      "Bytes": 1203200,
+      "SHA256": "6EBC194316536BA61AF5BE24508AD9FCBB2ECC685E716C12E787C79530F66BF0"
+    },
+    {
+      "Path": "licenses/Apache-2.0.txt",
+      "Bytes": 11358,
+      "SHA256": "CFC7749B96F63BD31C3C42B5C471BF756814053E847C10F3EB003417BC523D30"
+    },
+    {
+      "Path": "licenses/HidSharp-LICENSE.txt",
+      "Bytes": 10784,
+      "SHA256": "B065E07179F06490C96BF946E73F821086B2F29EFDE395F092AEA69A907EAE16"
+    },
+    {
+      "Path": "licenses/LGPL-2.1.txt",
+      "Bytes": 26530,
+      "SHA256": "DC626520DCD53A22F727AF3EE42C770E56C97A64FE3ADB063799D8AB032FE551"
+    },
+    {
+      "Path": "licenses/LHM-THIRD-PARTY-NOTICES.txt",
+      "Bytes": 25905,
+      "SHA256": "A60D5EE62F4D700CAFF38566F42874D554B8B530437C72804FB28B958CFBDA9B"
+    },
+    {
+      "Path": "licenses/Microsoft-MIT.txt",
+      "Bytes": 1116,
+      "SHA256": "CFC21F5E8BD655AE997EEC916138B707B1D290B83272C02A95C9F821B8C87310"
+    },
+    {
+      "Path": "licenses/MPL-2.0.txt",
+      "Bytes": 16725,
+      "SHA256": "1F256ECAD192880510E84AD60474EAB7589218784B9A50BC7CEEE34C2B91F1D5"
+    },
+    {
+      "Path": "licenses/PawnIO-redistribution.txt",
+      "Bytes": 1614,
+      "SHA256": "38FBF776A8E0FBBE074B929B17EAC06DDE5AF08C2EF00D412DEE38439718A2CF"
+    },
+    {
+      "Path": "licenses/PawnIO.Modules-0.1.6-source.zip",
+      "Bytes": 1002367,
+      "SHA256": "665B2F7A028F8A317BC35CD6FBF64986115909239019FF2D30D19260D7DD0982"
+    },
+    {
+      "Path": "licenses/PresentMon-MIT.txt",
+      "Bytes": 1067,
+      "SHA256": "4C949341B1893C8C6AD82F7FB4EEDF622CD1FD9C22A9AF8F19B2DAC19D1947B6"
+    },
+    {
+      "Path": "licenses/QingMonitor-MIT.txt",
+      "Bytes": 1081,
+      "SHA256": "A831CCB427E58F4A0074A1A143EC76FCD1663AD61C7F5D7005AAB110ED430A52"
+    },
+    {
+      "Path": "PresentMon.exe",
+      "Bytes": 980320,
+      "SHA256": "B2A706BC6AD475749E3B7E3409263AA1E6906D45BDCF993F6DBC0F660188F1AF"
+    },
+    {
+      "Path": "RAMSPDToolkit-NDD.dll",
+      "Bytes": 233472,
+      "SHA256": "B6882354C7C8EC186617E421507743DBFAE09C5C1FC24CEF76A1D0C0C26651DE"
+    },
+    {
+      "Path": "System.Buffers.dll",
+      "Bytes": 23816,
+      "SHA256": "2D78D770C9CB997199154AE8C018B9F1D1EFBC86729F7264DDE6DBAD2A12CAC3"
+    },
+    {
+      "Path": "System.Memory.dll",
+      "Bytes": 145200,
+      "SHA256": "D5E8E4866F9CFA66F7765660F84B210198893E55335487AFE5EBDA342C0E913D"
+    },
+    {
+      "Path": "System.Numerics.Vectors.dll",
+      "Bytes": 110344,
+      "SHA256": "20C2FA81B8C70D651099D762954F285FD4F942E63B2D7217C145DAB8D4B2F4C9"
+    },
+    {
+      "Path": "System.Runtime.CompilerServices.Unsafe.dll",
+      "Bytes": 19256,
+      "SHA256": "08CBD7278B66F1E68425A82D4B97181A4130D93E3DD91831407ABA7212CCDACF"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+name: 功能建议
+description: 帮助改善这个小工具
+title: '[Feature] '
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 你遇到了什么使用问题？
+      placeholder: 请先描述使用场景，再描述期望的行为。
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: 希望怎样改进？
+    validations:
+      required: true

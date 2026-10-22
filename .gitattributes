@@ -1,0 +1,15 @@
+* text=auto
+*.cs text eol=crlf
+*.ps1 text eol=crlf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.svg text eol=lf
+*.png binary
+*.ico binary
+*.dll binary
+*.exe binary
+*.zip binary
+# Preserve the exact upstream bytes covered by vendor/manifest.json.
+vendor/runtime/** -text

@@ -1,0 +1,23 @@
+CPU 温度支持 · PawnIO 2.2.0
+
+离线安装包已内置官方签名安装器，并默认安装温度支持。
+检测到完整的 2.2.0 或更新版本时跳过，避免重复安装。
+支持直接更新 2.1.x；更老或不完整的现有安装需要先用 Windows“已安装的应用”修复或卸载。
+
+便携分享包也带有此安装器。未安装 PawnIO 时，可以运行同文件夹的 PawnIO_setup.exe。
+如已安装，请直接启动本程序，无需再次运行驱动安装器。
+CPU／硬盘温度通常需要管理员权限。桌面快捷方式默认请求管理员确认；也可用托盘“以管理员重新运行…”。
+使用官方签名版，不选择开发者用的 Unrestricted edition。
+如安装后提示需要重启，先重启电脑再核对温度。程序不会强制重启。
+
+驱动由 Windows 安装至系统位置，是多个硬件监控软件可以共用的组件。
+删除本程序时，驱动继续保留。需要卸载 PawnIO 时使用 Windows“已安装的应用”，不要手动删除系统驱动文件。
+
+版本：2.2.0，发布者：namazso
+原安装器文件名：PawnIO_setup.exe（字节内容未改）
+SHA256：1F519A22E47187F70A1379A48CA604981C4FCF694F4E65B734AAA74A9FBA3032
+官方主页：https://pawnio.eu/
+固定发布：https://github.com/namazso/PawnIO.Setup/releases/tag/2.2.0
+再分发说明：https://github.com/namazso/PawnIO.Modules/wiki/Using-PawnIO-Modules
+官方二进制版本为专有许可；官方说明允许再分发安装器。
+源码版本的许可与官方二进制版本不同，不把项目自身 MIT 许可套用到此安装器。

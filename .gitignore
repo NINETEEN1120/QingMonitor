@@ -1,0 +1,44 @@
+# Local workspace and private runtime data
+/.chat-handoff/
+/运行数据/
+/验证/
+/构建/
+/发布暂存/
+/artifacts/
+/AGENTS.md
+/项目计划-独立悬浮窗.md
+/发布.ps1
+/文档/
+
+# Per-machine configuration, diagnostics and credentials
+QingMonitor.data-path
+settings.json
+test-settings.json
+*.log
+*.dmp
+*.tmp
+*.tmp-*
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.pem
+*.key
+
+# IDE / temporary output
+.vs/
+.vscode/
+bin/
+obj/
+*.user
+*.suo
+__pycache__/
+node_modules/
+
+# Executable assets are deliberately included only in vendor/runtime.
+*.exe
+*.dll
+*.pdb
+!vendor/runtime/**/*.exe
+!vendor/runtime/**/*.dll
