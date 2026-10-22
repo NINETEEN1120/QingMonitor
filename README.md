@@ -11,6 +11,7 @@
 面向 Windows 的独立性能悬浮窗 · 两行读数 · 玻璃外观 · 本地运行
 
 [![Version](https://img.shields.io/badge/version-0.1.11-3b82f6?style=flat-square)](https://github.com/NINETEEN1120/QingMonitor/releases/latest)
+[![Windows build](https://github.com/NINETEEN1120/QingMonitor/actions/workflows/build.yml/badge.svg)](https://github.com/NINETEEN1120/QingMonitor/actions/workflows/build.yml)
 [![Windows](https://img.shields.io/badge/Windows-11_x64-0078D4?style=flat-square)](#运行条件)
 [![.NET Framework](https://img.shields.io/badge/.NET_Framework-4.8-512BD4?style=flat-square)](docs/DEVELOPMENT.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-16a085?style=flat-square)](LICENSE)
